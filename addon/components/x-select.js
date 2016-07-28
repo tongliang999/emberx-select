@@ -175,6 +175,10 @@ export default Ember.Component.extend({
     this.$().on('blur', (event) => {
       this.blur(event);
     });
+    let $dom = this.$();
+    Ember.run.later(function() {
+      $dom.trigger('change');
+    }, 50);
   },
 
   /**
